@@ -10,15 +10,15 @@
  *        suma v1+v2=(x1+x2, y1+y2, z1+z2)
  *        resta v1-v2=(x1-x2, y1-y2, z1-z2)
  *        producto punto v1.v2= x1*x2 + y1*y2 + z1*z2 resultado escalar
- * 
+ *
  *        Si v = (x, y, z) entonces modulo(v) = sqrt(x*x + y*y+z*z) = sqrt (productoPunto(v.v))
  *
  *        v1 = v2 si x1 = x2 y y1 = y2 y z1 = z2
- * 
+ *
  *        Codificar el constructor
  *
  *        Este TAD debe tener las siguientes operaciones: sumar, restar, productoPunto, modulo, esIgual, imprimir
- * 
+ *
  * Diagrama de modelado UML:
  *
  * |----------------------|
@@ -54,44 +54,44 @@ public class Vec3D {
     this.z = z1;
   }
 
-  // Realiza la suma de dos Vec3D.
+  // Método que realiza la suma de dos Vec3D.
   public Vec3D sumar(Vec3D vector2) {
     return new Vec3D(this.x + vector2.x, this.y + vector2.y, this.z + vector2.z);
   }
 
-  // Realiza la resta entre dos Vec3D.
+  // Método que realiza la resta entre dos Vec3D.
   public Vec3D restar(Vec3D vector2) {
     return new Vec3D(this.x - vector2.x, this.y - vector2.y, this.z - vector2.z);
   }
 
-  // Realiza la operación producto-punto para dos Vec3D.
+  // Método que realiza la operación producto-punto para dos Vec3D.
   public double productoPunto(Vec3D vector2) {
    return (this.x * vector2.x) + (this.y + vector2.y) + (this.z + vector2.z);
   }
 
-  // Función que realiza la oepración producto-punto con dos Vec3D
+  // Método que realiza la oepración producto-punto con dos Vec3D
   public double modulo(Vec3D vector2) {
     return Math.sqrt(this.productoPunto(vector2));
   }
-  
-  // Función que verifica si dos Vec3D son iguales.
+
+  // Método que verifica si dos Vec3D son iguales.
   public boolean esIgual(Vec3D vector2) {
     return this.x == vector2.x && this.y == vector2.y && this.z == vector2.z;
   }
 
-  // Función que imprime un Vec3D en la salida estándar.
+  // Método que imprime un Vec3D en la salida estándar.
   public void imprimir() {
     System.out.println("(" + this.x + ", " + this.y + ", " + this.z + ")");
   }
 
   /**
-   * Función principal
+   * Método principal
    * Aquí comprobamos todas las operaciones con Vec3D disponibles.
    */
   public static void main(String[] args) {
     Vec3D v1 = new Vec3D(1.14, 25.87, 14.32); // Primer vector para operaciones.
     Vec3D v2 = new Vec3D(16.7, 14.0, 11.98); // Segundo vector para operaciones.
-    
+
     // Mostramos los vectores iniciales.
     System.out.println("Nuestros vectores iniciales son:");
     v1.imprimir();

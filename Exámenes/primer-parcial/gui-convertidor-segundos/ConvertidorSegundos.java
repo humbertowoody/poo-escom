@@ -40,26 +40,21 @@ import javax.swing.*;
 
 /**
  * ConvertidorSegundos
- * GUI para convertir horas, minutos y segundos en un valor de segundos únicamente.
- * Utiliza Swing para realizar el UI porque los Applets (per sé) no me funcionaron.
  */
 public class ConvertidorSegundos extends JApplet implements ActionListener {
-  private JButton botonConvertir;                             // El botón para realizar la conversión.
-  private JTextField campoHoras, campoMinutos, campoSegundos; // Los campos de entradas.
-  private JLabel etiquetaResultado;                           // La etiqueta para el resultado.
-  private JFrame ventana;                                     // La ventana de nuestro programa.
+  private JButton botonConvertir;                             // Variable de instancia del botón para realizar la conversión.
+  private JTextField campoHoras, campoMinutos, campoSegundos; // Variables de instancia con los campos de entradas.
+  private JLabel etiquetaResultado;                           // Variable de instancia con la etiqueta para el resultado.
+  private JFrame ventana;                                     // Variable de instancia con la ventana de nuestro programa.
   
   // Constructor de la clase.
   public ConvertidorSegundos() {
-    // Creamos la ventana.
-    this.ventana = new JFrame("Convertidor Segundos"); // El título es Convertidor Segundos.
+    this.ventana = new JFrame("Convertidor Segundos"); // El título de la ventana es Convertidor Segundos.
     this.ventana.getContentPane().setLayout(new FlowLayout()); // Usamos FlowLayout para que todo esté alineado.
 
-    // Creamos el botón y lo añadimos a la ventana.
     this.botonConvertir = new JButton("Convertir");
     this.ventana.getContentPane().add(botonConvertir);
 
-    // Creamos los campos de texto y los añadimos a la ventana.
     this.campoHoras = new JTextField("Horas...",10);
     this.campoMinutos = new JTextField("Minutos...", 10);
     this.campoSegundos = new JTextField("Segundos...", 10);
@@ -67,15 +62,12 @@ public class ConvertidorSegundos extends JApplet implements ActionListener {
     this.ventana.getContentPane().add(this.campoMinutos);
     this.ventana.getContentPane().add(this.campoSegundos);
 
-    // Creamos la etiqueta para el resultado y la añadimos a la ventana.
     this.etiquetaResultado = new JLabel("Resultado: xxxxxxxxxxxx segundos.");
     this.ventana.getContentPane().add(this.etiquetaResultado);
 
-    // Asignamos la escucha de eventos a nuestra clase.
     this.botonConvertir.addActionListener(this);
     this.ventana.getContentPane().add(this.botonConvertir);
 
-    // El programa debe terminar cuando cerramos la ventana.
     this.ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     // El tamaño de la ventana se determina automáticamente.
@@ -106,10 +98,8 @@ public class ConvertidorSegundos extends JApplet implements ActionListener {
     System.out.println("La conversión de " + horasEntrada + " horas, " + minutosEntrada + " minutos y " + segundosEntrada + " segundos es: " + resultadoEnSegundos + " segundos.");
   }
   
-  /**
-   * Función principal del programa.
-   */
+  // Método principal.
   public static void main(String[] args) {
-    new ConvertidorSegundos(); // Al instanciar la clase, se llama al constructor con las funciones para crear la ventana y demás.
+    new ConvertidorSegundos();
   }
 }
